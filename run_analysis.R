@@ -47,6 +47,6 @@ Data_mean<-sapply(Data,mean,na.rm=TRUE)
 Data_sd<-sapply(Data,sd,na.rm=TRUE)
 
 # Create tidy data set 
-DT <- data.table(Data)
-tidy<-DT[,lapply(.SD,mean),by="Activity,Subject"]
+DataTable <- data.table(Data)
+tidy<-DataTable[,lapply(.SD,mean),by="Activity,Subject"]
 write.table(tidy,file="tidy.txt",sep=",",row.names = FALSE)
